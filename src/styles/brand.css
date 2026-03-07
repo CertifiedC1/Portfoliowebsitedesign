@@ -1,0 +1,529 @@
+/* =============================================
+   Costa Luis & Co — Brand CSS System
+   Version 2.0 | Premium Corporate Design
+   ============================================= */
+
+/* ── Brand Color Tokens ── */
+:root {
+  --brand-navy: #1B3A6B;
+  --brand-navy-deep: #0F2444;
+  --brand-navy-light: #2A5298;
+  --brand-navy-mid: #153361;
+  --brand-gold: #C9A84C;
+  --brand-gold-light: #E8C97A;
+  --brand-gold-dark: #A07830;
+  --brand-gold-pale: #F5EDD4;
+  --brand-charcoal: #0F172A;
+  --brand-charcoal-mid: #1E293B;
+  --brand-charcoal-light: #334155;
+  --brand-neutral-50: #F8F9FC;
+  --brand-neutral-100: #F0F2F7;
+  --brand-neutral-200: #E2E6EF;
+  --brand-neutral-400: #9CA3AF;
+  --brand-neutral-600: #6B7280;
+  --brand-neutral-700: #374151;
+  --brand-neutral-900: #111827;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-section-sm: 4rem;
+  --space-section-md: 5rem;
+  --space-section-lg: 7rem;
+
+  /* Shadows */
+  --shadow-navy: 0 8px 32px rgba(27, 58, 107, 0.2);
+  --shadow-navy-lg: 0 16px 48px rgba(27, 58, 107, 0.3);
+  --shadow-gold: 0 8px 32px rgba(201, 168, 76, 0.3);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 20px 48px rgba(27, 58, 107, 0.12);
+}
+
+/* ── Dark Mode Token Overrides ── */
+.dark {
+  --brand-neutral-50: #0F172A;
+  --brand-neutral-100: #1E293B;
+  --brand-neutral-200: #334155;
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 20px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Global Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Utility Classes ── */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* ── Brand Color Utilities ── */
+.text-gold { color: var(--brand-gold); }
+.text-navy { color: var(--brand-navy); }
+.text-navy-deep { color: var(--brand-navy-deep); }
+.bg-navy { background-color: var(--brand-navy); }
+.bg-navy-deep { background-color: var(--brand-navy-deep); }
+.bg-gold { background-color: var(--brand-gold); }
+
+/* ── Gradient Utilities ── */
+.brand-gradient {
+  background: linear-gradient(135deg, var(--brand-navy-deep) 0%, var(--brand-navy) 60%, var(--brand-navy-light) 100%);
+}
+
+.brand-gradient-h {
+  background: linear-gradient(90deg, var(--brand-navy-deep) 0%, var(--brand-navy-light) 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, var(--brand-gold-dark) 0%, var(--brand-gold) 50%, var(--brand-gold-light) 100%);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(10,16,35,0.95) 0%, rgba(27,58,107,0.82) 50%, rgba(15,36,68,0.88) 100%);
+}
+
+/* ── Decorative Accents ── */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand-gold), var(--brand-gold-light), transparent);
+  margin-top: 12px;
+  border-radius: 2px;
+}
+
+.gold-underline-center {
+  position: relative;
+}
+
+.gold-underline-center::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brand-gold), var(--brand-gold-light), var(--brand-gold), transparent);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.gold-top-border {
+  border-top: 3px solid var(--brand-gold);
+}
+
+.navy-left-border {
+  border-left: 4px solid var(--brand-navy);
+}
+
+/* ── Grid Pattern Overlay ── */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(201,168,76,0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.25) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.dot-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(201,168,76,0.35) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* ── Card Styles ── */
+.card-base {
+  border-radius: 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover {
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  cursor: default;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Glow Effects ── */
+.gold-glow {
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.35);
+}
+
+.navy-glow {
+  box-shadow: 0 0 24px rgba(27, 58, 107, 0.35);
+}
+
+/* ── Button Styles ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, var(--brand-gold-dark), var(--brand-gold), var(--brand-gold-light));
+  color: var(--brand-navy-deep);
+  box-shadow: var(--shadow-gold);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.45);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, var(--brand-navy), var(--brand-navy-light));
+  color: white;
+  box-shadow: var(--shadow-navy);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-navy-lg);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border-radius: 0.875rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ── Badge / Tag Styles ── */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(201, 168, 76, 0.12);
+  color: var(--brand-gold);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+}
+
+.badge-navy {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(27, 58, 107, 0.1);
+  color: var(--brand-navy);
+}
+
+.dark .badge-navy {
+  background: rgba(27, 58, 107, 0.35);
+  color: #93C5FD;
+}
+
+/* ── Section Label Style ── */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--progress-width); }
+}
+
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ── Animation Utility Classes ── */
+.animate-fade-in-up {
+  animation: fadeInUp 0.65s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 2s ease-in-out infinite;
+}
+
+.progress-animate {
+  animation: progressFill 1.4s ease-out forwards;
+}
+
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Stagger animation delays ── */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f2f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-navy);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-navy-light);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--brand-navy-light);
+}
+
+/* ── Focus Styles (Accessibility) ── */
+:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Selection Highlight ── */
+::selection {
+  background: rgba(201, 168, 76, 0.25);
+  color: var(--brand-navy-deep);
+}
+
+.dark ::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: white;
+}
+
+/* ── Hide scrollbar for filter strips ── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Timeline connector ── */
+.timeline-line {
+  background: linear-gradient(180deg, transparent, var(--brand-gold) 15%, var(--brand-navy) 85%, transparent);
+}
+
+/* ── Shimmer loading placeholder ── */
+.shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(201,168,76,0.1) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* ── Certification badge ── */
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, var(--brand-navy-deep), var(--brand-navy));
+  color: var(--brand-gold);
+  box-shadow: 0 4px 16px rgba(27,58,107,0.25);
+  transition: transform 0.2s ease;
+}
+
+.cert-badge:hover {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+/* ── Map container ── */
+.map-container {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Prose / Rich text ── */
+.prose-brand p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--brand-neutral-600);
+}
+
+.dark .prose-brand p {
+  color: #94A3B8;
+}
+
+/* ── Responsive container helper ── */
+.container-brand {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-brand {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-brand {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ── Print styles ── */
+@media print {
+  .no-print { display: none !important; }
+  body { font-size: 12pt; }
+  a { color: var(--brand-navy); text-decoration: underline; }
+}
