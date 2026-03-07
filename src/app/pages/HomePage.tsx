@@ -1,4 +1,3 @@
-import portraitImage from 'figma:asset/8d5560b954a70bf207bb72daf4094643471fd813.png';
 import { Link } from 'react-router';
 import { useEffect, useRef, useState } from 'react';
 import {
@@ -7,9 +6,10 @@ import {
   Star, Phone, Mail
 } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1669333490889-194e8f46a766?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxOYWlyb2JpJTIwS2VueWElMjBjaXR5JTIwc2t5bGluZSUyMG1vZGVybnxlbnwxfHx8fDE3NzIwNTQzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080';
 const OFFICE_IMAGE = 'https://images.unsplash.com/photo-1758448721162-0c77cf477d6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMG9mZmljZSUyMGludGVyaW9yJTIwcHJlbWl1bXxlbnwxfHx8fDE3NzIwNTQzNjR8MA&ixlib=rb-4.1.0&q=80&w=1080';
-const PORTRAIT_IMAGE = portraitImage;
+const PORTRAIT_IMAGE = 'https://images.unsplash.com/photo-1620511450270-47162b983078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBBZnJpY2FuJTIwYnVzaW5lc3NtYW4lMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHN1aXR8ZW58MXx8fHwxNzcyOTIxMzM2fDA&ixlib=rb-4.1.0&q=80&w=1080';
 
 const stats = [
   { value: '35+', label: 'Years of Excellence', icon: Award },

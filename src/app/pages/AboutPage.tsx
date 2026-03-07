@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { CheckCircle, Award, Shield, Users, TrendingUp, ArrowRight, Star, Heart, Globe } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import portraitImage from 'figma:asset/8d5560b954a70bf207bb72daf4094643471fd813.png';
 
-const PORTRAIT_IMAGE = portraitImage;
+const PORTRAIT_IMAGE = 'https://images.unsplash.com/photo-1620511450270-47162b983078?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBBZnJpY2FuJTIwYnVzaW5lc3NtYW4lMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMHN1aXR8ZW58MXx8fHwxNzcyOTIxMzM2fDA&ixlib=rb-4.1.0&q=80&w=1080';
 const HANDSHAKE_IMAGE = 'https://images.unsplash.com/photo-1521790797524-b2497295b8a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxLZW55YSUyMEFmcmljYSUyMGJ1c2luZXNzJTIwcHJvZmVzc2lvbmFscyUyMGhhbmRzaGFrZXxlbnwxfHx8fDE3NzIwNTQzNjl8MA&ixlib=rb-4.1.0&q=80&w=1080';
 
 function useIntersection(ref: React.RefObject<Element | null>) {
