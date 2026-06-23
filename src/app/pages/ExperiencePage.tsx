@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 import { Award, BookOpen, Briefcase, Building, ArrowRight, CheckCircle, ChevronDown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -166,6 +167,14 @@ export function ExperiencePage() {
   const [expandedMobile, setExpandedMobile] = useState<number | null>(null);
 
   return (
+    <>
+      <Helmet>
+        <title>Experience &amp; Credentials | Costa Luis &amp; Co — Chartered Accountants</title>
+        <meta name="description" content="35+ years of professional experience — from Big Four foundations to building one of Nairobi's most respected independent audit and advisory practices." />
+        <meta property="og:title" content="Experience & Credentials | Costa Luis & Co" />
+        <meta property="og:image" content="/og-image.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      </Helmet>
     <div className={isDark ? 'bg-[#0F172A]' : 'bg-white'}>
       {/* ─── Hero ─── */}
       <section
@@ -240,15 +249,15 @@ export function ExperiencePage() {
         </div>
       </section>
 
-      {/* ─── Timeline — Desktop ─── */}
-      <section className={`py-16 lg:py-24 hidden md:block ${isDark ? 'bg-[#0F172A]' : 'bg-white'}`}>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ─── Timeline — Desktop (compact) ─── */}
+      <section className={`py-12 lg:py-16 hidden md:block ${isDark ? 'bg-[#0F172A]' : 'bg-white'}`}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-14">
+            <div className="text-center mb-10">
               <span className="text-xs uppercase tracking-widest" style={{ color: '#C9A84C', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
                 Career Journey
               </span>
-              <h2 className="mt-3" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: isDark ? 'white' : '#0F2444', lineHeight: 1.2 }}>
+              <h2 className="mt-2" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: isDark ? 'white' : '#0F2444', lineHeight: 1.2 }}>
                 Professional Timeline
               </h2>
             </div>
@@ -261,23 +270,23 @@ export function ExperiencePage() {
               style={{ background: `linear-gradient(180deg, transparent, #C9A84C 10%, #1B3A6B 90%, transparent)` }}
             />
 
-            <div className="space-y-12">
+            <div className="space-y-5">
               {timeline.map(({ period, icon: Icon, type, title, org, details }, i) => (
                 <AnimatedSection key={i}>
-                  <div className={`relative flex items-start gap-8 ${i % 2 === 0 ? '' : 'flex-row-reverse'}`}>
+                  <div className={`relative flex items-start gap-6 ${i % 2 === 0 ? '' : 'flex-row-reverse'}`}>
                     {/* Content card */}
                     <div className="flex-1">
                       <div
-                        className="p-6 rounded-2xl"
+                        className="p-4 rounded-xl hover:-translate-y-0.5 transition-all cursor-default"
                         style={{
                           background: isDark ? 'rgba(30,41,59,0.6)' : '#F8F9FC',
                           border: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)'}`,
-                          boxShadow: isDark ? 'none' : '0 2px 12px rgba(0,0,0,0.04)',
+                          boxShadow: isDark ? 'none' : '0 1px 8px rgba(0,0,0,0.04)',
                         }}
                       >
-                        <div className="flex items-center gap-3 mb-3">
+                        <div className="flex items-center gap-2 mb-1.5">
                           <span
-                            className="px-2.5 py-1 rounded-lg text-xs"
+                            className="px-2 py-0.5 rounded-md text-xs"
                             style={{
                               background: `${typeColors[type]}18`,
                               color: typeColors[type],
@@ -288,32 +297,37 @@ export function ExperiencePage() {
                             {period}
                           </span>
                         </div>
-                        <h3 className="mb-0.5" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '1rem', color: isDark ? 'white' : '#0F2444' }}>
+                        <h3 className="mb-0.5" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700, fontSize: '0.875rem', color: isDark ? 'white' : '#0F2444' }}>
                           {title}
                         </h3>
-                        <p className="text-xs mb-4" style={{ color: '#C9A84C', fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+                        <p className="text-xs mb-2" style={{ color: '#C9A84C', fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
                           {org}
                         </p>
-                        <div className="space-y-2">
-                          {details.map((detail, j) => (
-                            <div key={j} className="flex items-start gap-2">
-                              <CheckCircle size={13} style={{ color: '#C9A84C', flexShrink: 0, marginTop: 2 }} />
-                              <span className="text-xs" style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.6, color: isDark ? '#94A3B8' : '#6B7280' }}>
+                        <div className="space-y-1">
+                          {details.slice(0, 2).map((detail, j) => (
+                            <div key={j} className="flex items-start gap-1.5">
+                              <CheckCircle size={11} style={{ color: '#C9A84C', flexShrink: 0, marginTop: 2 }} />
+                              <span className="text-xs" style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.5, color: isDark ? '#94A3B8' : '#6B7280' }}>
                                 {detail}
                               </span>
                             </div>
                           ))}
+                          {details.length > 2 && (
+                            <p className="text-xs mt-1" style={{ color: isDark ? '#475569' : '#9CA3AF', fontFamily: 'Inter, sans-serif', fontStyle: 'italic' }}>
+                              +{details.length - 2} more details
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
 
                     {/* Center icon */}
-                    <div className="absolute left-1/2 top-6 -translate-x-1/2 z-10">
+                    <div className="absolute left-1/2 top-4 -translate-x-1/2 z-10">
                       <div
-                        className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
+                        className="w-8 h-8 rounded-full flex items-center justify-center shadow-md"
                         style={{ background: `linear-gradient(135deg, ${typeColors[type]}, ${typeColors[type]}88)` }}
                       >
-                        <Icon size={16} style={{ color: 'white' }} />
+                        <Icon size={13} style={{ color: 'white' }} />
                       </div>
                     </div>
 
@@ -496,5 +510,6 @@ export function ExperiencePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

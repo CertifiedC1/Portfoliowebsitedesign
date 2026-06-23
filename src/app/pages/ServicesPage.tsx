@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 import { FileText, Scale, Building, TrendingUp, Shield, Globe, Cpu, ArrowRight, CheckCircle, ChevronDown } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -171,6 +172,14 @@ export function ServicesPage() {
     : services.filter(s => s.category === activeCategory);
 
   return (
+    <>
+      <Helmet>
+        <title>Our Services | Costa Luis &amp; Co — Chartered Accountants</title>
+        <meta name="description" content="Comprehensive professional services: Statutory Audit, Tax Advisory, Company Secretarial, Insolvency & Restructuring, Business Consultancy, and IT Solutions." />
+        <meta property="og:title" content="Services | Costa Luis & Co" />
+        <meta property="og:image" content="/og-image.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      </Helmet>
     <div className={isDark ? 'bg-[#0F172A]' : 'bg-white'}>
       {/* ─── Hero ─── */}
       <section
@@ -181,6 +190,7 @@ export function ServicesPage() {
           backgroundImage: `linear-gradient(rgba(201,168,76,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.4) 1px, transparent 1px)`,
           backgroundSize: '50px 50px',
         }} />
+        <div className="absolute left-0 top-1/4 bottom-1/4 w-1 rounded-r-full" style={{ background: 'linear-gradient(180deg, transparent, #C9A84C, transparent)' }} />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <span className="text-xs uppercase tracking-widest" style={{ color: '#C9A84C', fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
             What We Offer
@@ -398,5 +408,6 @@ export function ServicesPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

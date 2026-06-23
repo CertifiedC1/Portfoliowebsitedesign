@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="url(#bgGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="12" stroke="url(#borderGrad)" stroke-width="1.5" fill="none"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="22" fill="url(#textGrad)" letter-spacing="1">CL</text>
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F2444"/>
+      <stop offset="1" stop-color="#1B3A6B"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C9A84C" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#E8C97A" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="10" y1="20" x2="54" y2="44" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8C97A"/>
+      <stop offset="1" stop-color="#C9A84C"/>
+    </linearGradient>
+  </defs>
+</svg>
